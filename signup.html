@@ -101,8 +101,7 @@ var currenuse;
   var userEmai = document.getElementById("email").value;
   var userPas = document.getElementById("password").value;
   var username=document.getElementById("username").value;
-  console.log(userEmai);
-  console.log(userPas);
+   window.alert("signed in successfully..go to already have a account and login")
   firebase.auth().createUserWithEmailAndPassword(userEmai,userPas).then(function(user){
 
 			
