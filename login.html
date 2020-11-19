@@ -27,7 +27,7 @@
 
     <!-- JAVA SCRIPT -->
     <!-- require -->
-    <script data-main="js/app" src="vendor/require/require.js"></script>
+    <!-- <script data-main="js/app" src="vendor/require/require.js"></script> -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -44,19 +44,17 @@
 <!-- MAIN -->
 <main>
     <div class="sh-login">
-        <div class="sh-login__logo"><a href="index.php" class="sh-logo"><img src="fonts/icons/sharehub/svg/Sharehub.svg" alt=""></a></div>
+        <div class="sh-login__logo"><a href="index.php" class="sh-logo"><img src="logo/technocolab logo2.jpg" alt=""></a></div>
         <div class="sh-login__content">
             <p>Login with Sharehub</p>
             <div class="sh-login__form">
-                <form action="#">
-                    <input type="text" class="form-control" placeholder='Username' required>
-                    <div class="sh-input-copy">
-                        <input type="password" class="form-control" placeholder='Password' required>
-                        <a href="#">Copy</a>
-                    </div>
+                    <input type="text" class="form-control" placeholder='Email' id='email' required><br>
+
+                        <input type="password" class="form-control" placeholder='Password' id='password' required><br>
+                  
                     <div class="sh-login__send">
-                        <a href="#">Need an account?</a>
-                        <button type="submit" class="sh-btn">Login</button>
+                        <a href="signup.html">Need an account?</a>
+                        <button class="sh-btn" onclick="login()">Login</button>
                     </div>
                     <div class="sh-login__footer">
                         <p>or with Social Network</p>
@@ -66,7 +64,7 @@
                             <a href="" class="sh-btn-social__google sh-btn-social"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
                         </div>
                     </div>
-                </form>
+
             </div>
         </div>
     </div>
@@ -76,9 +74,69 @@
 <footer>
     <div class="sh-footer">
         <div class="container">
-            <p class="text-center">Terms & Conditons . Privacy Policy</p>
+            <p class="text-center" style="color: white;font-size:20px;">Terms & Conditons . Privacy Policy</p>
         </div>
     </div>
 </footer>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAikoDUbLopa2ITg-cxFRoPOqLSoQ1eJIA",
+    authDomain: "review-my-project-15fd5.firebaseapp.com",
+    databaseURL: "https://review-my-project-15fd5.firebaseio.com",
+    projectId: "review-my-project-15fd5",
+    storageBucket: "review-my-project-15fd5.appspot.com",
+    messagingSenderId: "646904239627",
+    appId: "1:646904239627:web:f9997babee13384726990e",
+    measurementId: "G-MHQCLHL10G"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script>
+function login(){
+
+
+  var userEmail = document.getElementById("email").value;
+  var userPass = document.getElementById("password").value;
+  // database.ref('/users/'+fa).update(da);
+   console.log(userEmail);
+   console.log(userPass);
+
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function(user) {
+  //user signed in
+     window.location="index.html";
+	 //window.alert("logged in");
+
+  }).catch(function(error) {
+  var errorCode = error.code;
+  var errorMessage = error.message;
+
+  if (errorCode === 'auth/wrong-password') {
+    alert('Wrong password.');
+    } else {
+    alert(errorMessage);
+  }
+  console.log(error);
+
+
+    });
+
+  }
+
+</script>
+
 </body>
 </html>
