@@ -101,13 +101,14 @@ var currenuse;
   var userEmai = document.getElementById("email").value;
   var userPas = document.getElementById("password").value;
   var username=document.getElementById("username").value;
-   window.alert("signed in successfully..go to already have a account and login")
+  
   firebase.auth().createUserWithEmailAndPassword(userEmai,userPas).then(function(user){
 
 			
           currentuse=firebase.auth().currentUser.uid;
 
            writeUserData(currentuse,userEmai,username);
+	   window.alert("signed in successfully..go to already have a account and login")
 		   
 
   }).catch(function(error) {
