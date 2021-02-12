@@ -23,7 +23,7 @@
 
     <link href="css/style.css" rel="stylesheet"/>
 
-   
+
 </head>
 <body>
 <!-- HEADER -->
@@ -82,17 +82,16 @@
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
-    apiKey: "AIzaSyAikoDUbLopa2ITg-cxFRoPOqLSoQ1eJIA",
-    authDomain: "review-my-project-15fd5.firebaseapp.com",
-    databaseURL: "https://review-my-project-15fd5.firebaseio.com",
-    projectId: "review-my-project-15fd5",
-    storageBucket: "review-my-project-15fd5.appspot.com",
-    messagingSenderId: "646904239627",
-    appId: "1:646904239627:web:f9997babee13384726990e",
-    measurementId: "G-MHQCLHL10G"
-  };
+   apiKey: "AIzaSyBup04JFBdGgyNQlxIP7H92qZ7KvGdqPvk",
+   authDomain: "review-my-project-282af.firebaseapp.com",
+   projectId: "review-my-project-282af",
+   storageBucket: "review-my-project-282af.appspot.com",
+   messagingSenderId: "1090972319214",
+   appId: "1:1090972319214:web:08592cdeda3db7f5cae2ff"
+ };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  firebase.database();
   firebase.analytics();
 </script>
 <script>
@@ -101,15 +100,19 @@ var currenuse;
   var userEmai = document.getElementById("email").value;
   var userPas = document.getElementById("password").value;
   var username=document.getElementById("username").value;
-  
+
   firebase.auth().createUserWithEmailAndPassword(userEmai,userPas).then(function(user){
 
-			
+
           currentuse=firebase.auth().currentUser.uid;
 
            writeUserData(currentuse,userEmai,username);
 	   window.alert("signed in successfully..go to already have a account and login")
-		   
+//  firebase.database().ref('users').child(currentuse).set({
+//      Email:email,
+//  Username:username
+//    });
+
 
   }).catch(function(error) {
   // Handle Errors here.
@@ -118,26 +121,25 @@ var currenuse;
   window.alert(errorMessage);
   // ...
   });
-  
-  
- 
+
+
+
   }
 
    const database=firebase.database();
   function writeUserData(userId,email,username) {
 
-   
-    var firebasedataref=firebase.database().ref('users/'+userId);
+
+   var firebasedataref=firebase.database().ref('users/'+userId);
 	database.ref('users/'+userId).set({
         Email:email,
 		Username:username
-       
-      });
-	 
+  });
+
 
    }
-   
-   
+
+
 
 </script>
 
