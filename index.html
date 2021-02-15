@@ -8,8 +8,13 @@
     <meta name="description" content="Sharehub - Responsive HTML5 Template">
     <meta name="author" content="etheme.com">
 
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!--<script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+
+  
+    <!--<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>-->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -263,7 +268,33 @@
 
         <div class="sh-upload">
             <div class="sh-upload__head">
-                <form action="#"><input type="text" class="form-control ttg-border-none" placeholder="Paste URL or image link or add text here" /></form>
+                <form action="#" method="POST" id="uploadform"><input type="text" class="form-control ttg-border-none" placeholder="Paste URL or image link or add text here" />
+                   
+                        <i class="icon-Upload_Image"></i>
+                        <span>Post Category </span>
+                            <select id="selectcategory" name="category">
+                              <option value="java">Java</option>
+                              <option value="python">Python</option>
+                              <option value="iot">IOT</option>
+                              <option value="c">C & C++</option>
+                              <option value="ai">Artificial Intelligence</option>
+                              <option value="android">Android App Development</option>
+                              <option value="fullstack Development">Full Stack Development</option>
+                              <option value="aws">AWS-cloud computing</option>
+                              <option value="ML">Machine Learning</option>
+                              <option value="Ethical Hacking">Ethical Hacking</option>
+                              <option value="AutoCAD">AutoCAD</option>
+                              <option value="SOLIDWORKS">SOLIDWORKS</option>
+                              <option value="Mobile Games">Mobile games</option>
+                              <option value="Graphic Design">Graphic Design</option>
+                              <option value="Interior Designing">Interior Designing</option>
+                        </select>
+    
+                    
+                    <button type="submit" sendMessage()>Post</button>
+
+                    <script type="text/javascript"  src="app.js" charset="utf-8"></script>
+                </form>
             </div>
             <div class="sh-upload__content">
                 <img src="fonts/icons/sharehub/svg/Upload_graphic.svg" alt="">
@@ -283,6 +314,7 @@
                     <i class="icon-Video_to_GIF"></i>
                     <span>Browse your uploads</span>
                 </a>
+                
             </div>
         </div>
         <script>
@@ -476,7 +508,7 @@
                             <div class="sh-section__media sh-video">
                                 <div class="sh-video__player">
                                     <video poster="images/mt-fuji-1346096_1920.jpg">
-                                        <source src="videos/video-1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+                                        <!--<source src="videos/video-1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>-->
                                     </video>
                                     <div class="sh-media__btn"></div>
                                 </div>
@@ -512,9 +544,9 @@
                         <p>This track is so sick yo!</p>
                         <div class="sh-section__media sh-audio">
                             <div class="sh-audio__player">
-                                <audio>
+                               <!-- <audio>
                                     <source src="videos/video-1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
-                                </audio>
+                                </audio>-->
                                 <img src="images/light-bulb-1640438_960_720.jpg" alt="">
                                 <div class="sh-media__btn"></div>
                             </div>
