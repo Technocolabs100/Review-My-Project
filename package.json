@@ -1,0 +1,25 @@
+{
+  "name": "review-my-project",
+  "version": "1.0.0",
+  "description": "This is the Final Project for your Team, we have uploaded the files of design thinking for this project.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvnaveenbabu/Review-My-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvnaveenbabu/Review-My-Project/issues"
+  },
+  "homepage": "https://github.com/jvnaveenbabu/Review-My-Project#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mongoose": "^5.11.16",
+    "nodemon": "^2.0.7"
+  }
+}
