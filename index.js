@@ -93,3 +93,21 @@ var mysort = {loved: 1};
 
     }).sort(mysort);
 
+
+
+// Adding Followwers and Following Function
+y=false
+document.getElementById('follow').onclick = function changeContent() {
+    //Following a user
+    if (y==false){
+        x=Review.follow;
+        Review.follow=x+1;
+        y=true;
+    }
+    // Unfollowing a User
+    else{
+        x=Review.follow;
+        Review.follow=x-1;
+        y=false;
+    }
+ }
