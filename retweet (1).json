@@ -1,0 +1,47 @@
+{
+<<<<<<< HEAD
+  "name": "nodejs-workshop",
+  "version": "1.0.0",
+  "description": "NodeJs Workshop",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {},
+=======
+  "name": "trending",
+  "version": "1.0.0",
+  "description": "Adding trending feature",
+  "main": "index.js",
+>>>>>>> 9a691cafe4457559399f4083759b7be2b3e898b7
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+<<<<<<< HEAD
+    "url": "git+https://github.com/EntryLevelDeveloperTraining/nodejs-workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EntryLevelDeveloperTraining/nodejs-workshop/issues"
+  },
+  "homepage": "https://github.com/EntryLevelDeveloperTraining/nodejs-workshop#readme"
+=======
+    "url": "git+https://github.com/dheeraj0802/Review-My-Project.git"
+  },
+  "author": "Dheeraj Khatri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dheeraj0802/Review-My-Project/issues"
+  },
+  "homepage": "https://github.com/dheeraj0802/Review-My-Project#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15"
+  }
+>>>>>>> 9a691cafe4457559399f4083759b7be2b3e898b7
+}
