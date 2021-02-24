@@ -1741,3 +1741,16 @@ section {
     background-color: rgb(49, 160, 177);
     color: #fff;
 }
+.imageprop
+{
+    width:700px;
+    height:500px;
+}
+.alert {
+    text-align: center;
+    padding: 10px;
+    background: rgb(168, 240, 177);
+    color: green;
+    margin-bottom: 10px;
+    display: none;
+  }
