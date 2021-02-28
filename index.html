@@ -8,6 +8,9 @@
     <meta name="description" content="Sharehub - Responsive HTML5 Template">
     <meta name="author" content="etheme.com">
 
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -331,8 +334,8 @@
                             </div>
                             <div class="sh-content-head__popularity-body">
                                 <ul>
-                                    <li><a href="#">Newest first</a></li>
-                                    <li><a href="#">Highest scoring</a></li>
+                                    <li><a href="#" id="first">Newest first</a></li>
+                                    <li><a href="#" id="second">Highest scoring</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -345,6 +348,10 @@
                     <a href="#" class="sh-btn-icon"><i class="icon-Randomize"></i></a>
                 </div>
             </div>
+           
+            <div id="content"></div>
+
+
             <!--sections-->
             <div class="sh-section__wrap row">
                 <!--section-->
@@ -368,12 +375,13 @@
                             <a href="#" class="sh-section__btn-upvote sh-btn-icon"><i class="icon-Upvote"></i></a>
                             <a href="#" class="sh-section__btn-downvote sh-btn-icon"><i class="icon-Downvote"></i></a>
                             <a href="#" class="sh-section__btn-repost sh-btn-icon"><i class="icon-Repost"></i></a>
-                            <a href="#" class="sh-section__btn-like sh-btn-icon"><i class="icon-Favorite_Full"></i><span>1,274</span></a>
+                            <a href="#" class="sh-section__btn-like sh-btn-icon"><i class="icon-Favorite_Full"></i><span>2000</span></a>
                             <a href="#" class="sh-section__btn-comment sh-btn-icon"><i class="icon-Comment_Full"></i><span>982</span></a>
                             <a href="#" class="sh-section__btn-share sh-btn-icon"><i class="icon-Share"></i></a>
                         </div>
                     </div>
                 </div>
+            
                 <!--section-->
                 <div class="sh-section__item col-lg-6">
                     <div class="sh-section">
@@ -424,13 +432,14 @@
                             <a href="#" class="sh-section__btn-upvote sh-btn-icon"><i class="icon-Upvote"></i></a>
                             <a href="#" class="sh-section__btn-downvote sh-btn-icon"><i class="icon-Downvote"></i></a>
                             <a href="#" class="sh-section__btn-repost sh-btn-icon"><i class="icon-Repost"></i></a>
-                            <a href="#" class="sh-section__btn-like sh-btn-icon"><i class="icon-Favorite_Full"></i><span>1,274</span></a>
+                            <a href="#" class="sh-section__btn-like sh-btn-icon"><i class="icon-Favorite_Full"></i><span>1500</span></a>
                             <a href="#" class="sh-section__btn-comment sh-btn-icon"><i class="icon-Comment_Full"></i><span>982</span></a>
                             <a href="#" class="sh-section__btn-share sh-btn-icon"><i class="icon-Share"></i></a>
                         </div>
                     </div>
                 </div>
                 <!--section-->
+            
                 <div class="sh-section__item col-lg-6">
                     <div class="sh-section">
                     <div class="sh-section__head">
@@ -454,7 +463,7 @@
                         <a href="#" class="sh-section__btn-upvote sh-btn-icon"><i class="icon-Upvote"></i></a>
                         <a href="#" class="sh-section__btn-downvote sh-btn-icon"><i class="icon-Downvote"></i></a>
                         <a href="#" class="sh-section__btn-repost sh-btn-icon"><i class="icon-Repost"></i></a>
-                        <a href="#" class="sh-section__btn-like sh-btn-icon"><i class="icon-Favorite_Full"></i><span>1,274</span></a>
+                        <a href="#" class="sh-section__btn-like sh-btn-icon"><i class="icon-Favorite_Full"></i><span>1750</span></a>
                         <a href="#" class="sh-section__btn-comment sh-btn-icon"><i class="icon-Comment_Full"></i><span>982</span></a>
                         <a href="#" class="sh-section__btn-share sh-btn-icon"><i class="icon-Share"></i></a>
                     </div>
@@ -1003,7 +1012,7 @@
                             <a href="#" class="sh-section__avatar sh-avatar"><img src="images/avatars/avatar-16.png" alt=""></a>
                             <div>
                                 <a href="#" class="sh-section__name">Question Form</a>
-                                <span class="sh-section__passed">3 hours ago</span>
+                                <span class="sh-section__passed">2 hours ago</span>
                             </div>
                             <a href="#" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                         </div>
@@ -1158,5 +1167,7 @@
             require(['modules/posts']);
         });
     </script>
+    <script src="index.js"></script>
+    
 </body>
 </html>

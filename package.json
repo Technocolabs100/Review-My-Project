@@ -1,0 +1,22 @@
+{
+  "name": "review-my-project",
+  "version": "1.0.0",
+  "description": "This is the Final Project for your Team, we have uploaded the files of design thinking for this project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dheeraj0802/Review-My-Project.git"
+  },
+  "author": "Dheeraj Khatri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dheeraj0802/Review-My-Project/issues"
+  },
+  "homepage": "https://github.com/dheeraj0802/Review-My-Project#readme",
+  "dependencies": {
+    "firebase": "^8.2.9"
+  }
+}
