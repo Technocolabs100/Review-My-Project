@@ -9,6 +9,29 @@
     <meta name="author" content="etheme.com">
     <title>Sharehub - Responsive HTML5 Template</title>
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
+
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyBup04JFBdGgyNQlxIP7H92qZ7KvGdqPvk",
+          authDomain: "review-my-project-282af.firebaseapp.com",
+          databaseURL: "https://review-my-project-282af-default-rtdb.firebaseio.com",
+          projectId: "review-my-project-282af",
+          storageBucket: "review-my-project-282af.appspot.com",
+          messagingSenderId: "1090972319214",
+          appId: "1:1090972319214:web:08592cdeda3db7f5cae2ff"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
+
     <!-- STYLESHEET -->
     <!-- FONTS -->
     <!-- Muli -->
@@ -251,8 +274,58 @@
         </div>
         <div class="sh-upload__content">
             <img src="fonts/icons/sharehub/svg/Upload_graphic.svg" alt="">
-            <p>Drag Images here or <a href="#" class="sh-btn">Browse</a> from your computer. </p>
+            <p>Drag Images here or <a href="#" class="sh-btn" onclick="document.getElementById('getFile').click()">Browse</a> from your computer. </p>
+            <input type='file' id="getFile" accept="image/*" style="display:none">
+            <button id="send" class="sh-btn">Upload</button>
+            <p id="uploading"></p>
+            <progress value="0" max="100" id="progress"></progress>
         </div>
+        <script>
+            var files = [];
+            document.getElementById("getFile").addEventListener("change", function(e) {
+              files = e.target.files;
+              for (let i = 0; i < files.length; i++) {
+                console.log(files[i]);
+              }
+            });
+            
+            document.getElementById("send").addEventListener("click", function() {
+              //checks if files are selected
+              if (files.length != 0) {
+                //Loops through all the selected files
+                for (let i = 0; i < files.length; i++) {
+                  //create a storage reference
+                  var storage = firebase.storage().ref(files[i].name);
+            
+                  //upload file
+                  var upload = storage.put(files[i]);
+            
+                  //update progress bar
+                  upload.on(
+                    "state_changed",
+                    function progress(snapshot) {
+                      var percentage =
+                        (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                      document.getElementById("progress").value = percentage;
+                    },
+            
+                    function error() {
+                      alert("error uploading file");
+                    },
+            
+                    function complete() {
+                      document.getElementById(
+                        "uploading"
+                      ).innerHTML += `${files[i].name} Uploaded Successfully <br />`;
+                    }
+                  );
+                }
+              } else {
+                alert("No file chosen");
+              }
+            });
+            </script>
+            
         <div class="sh-upload__footer">
             <a href="#">
                 <i class="icon-Make_a_meme"></i>
