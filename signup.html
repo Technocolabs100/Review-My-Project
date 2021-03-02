@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Sharehub - Responsive HTML5 Template">
+    <meta name="author" content="etheme.com">
+    <title>Sharehub - Responsive HTML5 Template</title>
+
+    <!-- STYLESHEET -->
+    <!-- FONTS -->
+    <!-- Muli -->
+    <link href="https://fonts.googleapis.com/css?family=Signika:300,400,600,700" rel="stylesheet">
+
+    <!-- icon -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="fonts/icons/fontawesome/css/font-awesome.min.css"/>
+
+     <link rel="stylesheet" href="fonts/icons/sharehub/style.css"/>
+
+
+    <link href="css/style.css" rel="stylesheet"/>
+
+
+</head>
+<body>
+<!-- HEADER -->
+<header>
+
+</header>
+
+<!-- MAIN -->
+<main>
+    <div class="sh-login">
+         <div class="sh-login__logo"><a href="index.php" class="sh-logo"><img src="logo/technocolab logo2.jpg" alt=""></a></div>
+        <div class="sh-login__content">
+            <p>Sign up with Sharehub</p>
+            <div class="sh-login__form">
+
+                    <input type="text" class="form-control" placeholder='Username' id='username' required><br>
+                    <input type="email" class="form-control" placeholder='Email' id='email' required><br>
+                    <input type="password" class="form-control" placeholder='Password' id='password' required><br>
+                    <div class="sh-login__send">
+                        <a href="login.html">Already have an account?</a>
+                        <button class="sh-btn" onclick="signup()">Sign up</button>
+                    </div>
+                    <div class="sh-login__footer">
+                        <p>or with Social Network</p>
+                        <div class="sh-login__social">
+                            <a href="" class="sh-btn-social__facebook sh-btn-social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="" class="sh-btn-social__twitter sh-btn-social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="" class="sh-btn-social__google sh-btn-social"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="sh-footer">
+        <div class="container">
+            <p class="text-center" style="color: white;font-size:20px;">Terms & Conditons . Privacy Policy</p>
+        </div>
+    </div>
+</footer>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+   apiKey: "AIzaSyBup04JFBdGgyNQlxIP7H92qZ7KvGdqPvk",
+   authDomain: "review-my-project-282af.firebaseapp.com",
+   projectId: "review-my-project-282af",
+   storageBucket: "review-my-project-282af.appspot.com",
+   messagingSenderId: "1090972319214",
+   appId: "1:1090972319214:web:08592cdeda3db7f5cae2ff"
+ };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.database();
+  firebase.analytics();
+</script>
+<script>
+var currenuse;
+  function signup(){
+  var userEmai = document.getElementById("email").value;
+  var userPas = document.getElementById("password").value;
+  var username=document.getElementById("username").value;
+
+  firebase.auth().createUserWithEmailAndPassword(userEmai,userPas).then(function(user){
+
+
+          currentuse=firebase.auth().currentUser.uid;
+
+           writeUserData(currentuse,userEmai,username);
+	   window.alert("signed in successfully..go to already have a account and login")
+//  firebase.database().ref('users').child(currentuse).set({
+//      Email:email,
+//  Username:username
+//    });
+
+
+  }).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  window.alert(errorMessage);
+  // ...
+  });
+
+
+
+  }
+
+   const database=firebase.database();
+  function writeUserData(userId,email,username) {
+
+
+   var firebasedataref=firebase.database().ref('users/'+userId);
+	database.ref('users/'+userId).set({
+        Email:email,
+		Username:username
+  });
+
+
+   }
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
