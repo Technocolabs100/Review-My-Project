@@ -1,113 +1,107 @@
-console.log("connected");
+//  Javascript is Connected 
+console.log("Connectd");
 
 
-//  Requiring Express, Mongodb, Mongoose, body-parser 
-const express = require("express");
-const app= express();
-const mongoose = require("mongoose");
-const bodyParser= require('body-parser'); 
-const { Db } = require("mongodb");
+//  Connecting Firebase to WebApp
+var firebaseConfig = {
+    apiKey: "AIzaSyBup04JFBdGgyNQlxIP7H92qZ7KvGdqPvk",
+    authDomain: "review-my-project-282af.firebaseapp.com",
+    databaseURL: "https://review-my-project-282af-default-rtdb.firebaseio.com",
+    projectId: "review-my-project-282af",
+    storageBucket: "review-my-project-282af.appspot.com",
+    messagingSenderId: "1090972319214",
+    appId: "1:1090972319214:web:08592cdeda3db7f5cae2ff"
+  };
 
-app.use(bodyParser.urlencoded({extended: true}))
+  // Configuring the firebase
+  firebase.initializeApp(firebaseConfig);
 
+  //  Connecting to my required database
+  let post = firebase.database().ref("post_sorting");
 
-//  Connecting Mongodb
-mongoose.connect('mongodb://localhost:27017/review', {useNewUrlParser: true, useUnifiedTopology: true});
+  //  Function to add object into firebase real-time database
+  
+  //  let newPost = post.push();
+  //  newPost.set({
+  //    comments:250,
+  //    content:"Is it okay for my 5 year old autistic cousin with violent tendencies to play GTA V?",
+  //    image:"images/avatars/avatar-16.png",
+  //    like:1274,
+  //    time:2,
+  //    title:"Question Form",
 
+  //  })
+  
 
-// Starting Server
-app.listen(3000, function() {
-    console.log('listening on 3000')
+  // Ordering the posts by time at which it was posted
+
+  document.getElementById("first").addEventListener('click',e=>{
+    
+          
+    const query = post.orderByChild('time').limitToLast(100);
+    document.getElementById("content").innerHTML=``;
+    query.once('value', function (snapshot) {
+      snapshot.forEach(function (childSnapshot) {
+          var childKey = childSnapshot.key;
+          var childData = childSnapshot.val();
+          console.log(childData.likes);
+          // ...
+          document.getElementById("content").innerHTML+=childData.inner;
+          
+      });
+      
   });
-
-// Listening on Home Page  
-  app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html'); 
- });
-
-// Creating Schema for Posts
-var postSchema = new mongoose.Schema({
-  title: String,
-  user:String,
-  likes:Number,
-  loved: Number,
-  dislike:Number,
-  comment:Number
-});
-
-// Modelling the Schema 
-var Review = mongoose.model("Review",postSchema);
-
-// const x = new Review({
-//    title : "USA",
-//    user: "Shyam",
-//    likes: 100,
-//    loved:1000,
-//  dislike:101,
-//    comment:49
-//  })
-//  x.save(function (err) {
-//    if (err) return handleError(err);
-//    // saved!
-
-//  });
+  
+  
+  })
 
 
 
-//   Sorting the data on the basis of likes
+//  Ordering the posts by most likes
 
+  document.getElementById("second").addEventListener('click',e=>{
+    
+          
+    const query = post.orderByChild('likes').limitToLast(100);
+    document.getElementById("content").innerHTML=``;
+    query.once('value', function (snapshot) {
+      snapshot.forEach(function (childSnapshot) {
+          var childKey = childSnapshot.key;
+          var childData = childSnapshot.val();
+          console.log(childData.likes);
+          // ...
+          document.getElementById("content").innerHTML+=childData.inner;
+          
+      });
+      
+  });
+  
+  
+  })
 
-var mysort = {likes: 1};
+  
+  
+  // Adding sharing Feature in Web App
 
-    Review.find({}, function (err, result) {
+  // Grabbing share icons 
+  document.querySelectorAll('.icon-Link').forEach(item => {
+    
+    //  Adding Event Listeners to share Button
+    item.addEventListener('click', event => {
+      console.log("Success")
+      
+      // Grabbing the id in which we have add share options
+      let x = document.getElementById("whats")
 
-        if (err) {
+      // Listing Display options
+      if (x.style.display == 'block'){
+        x.style.display = 'none';
+      }
+      else{
+        //  Changing Dispaly Options
+        x.style.display = 'block';
+      }
+    })
+  })
 
-            console.log("error query");
-
-        } else {
-
-            console.log(result);
-
-        }
-
-    }).sort(mysort);
-
-
-//   Sorting the data on the basis of loved reactions
-
-var mysort = {loved: 1};
-
-    Review.find({}, function (err, result) {
-
-        if (err) {
-
-            console.log("error query");
-
-        } else {
-
-            console.log(result);
-
-        }
-
-
-    }).sort(mysort);
-
-
-
-// Adding Followwers and Following Function
-y=false
-document.getElementById('follow').onclick = function changeContent() {
-    //Following a user
-    if (y==false){
-        x=Review.follow;
-        Review.follow=x+1;
-        y=true;
-    }
-    // Unfollowing a User
-    else{
-        x=Review.follow;
-        Review.follow=x-1;
-        y=false;
-    }
- }
+  
