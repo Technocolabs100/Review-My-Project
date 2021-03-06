@@ -17,10 +17,22 @@
   <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
   <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
-  
+
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBup04JFBdGgyNQlxIP7H92qZ7KvGdqPvk",
+      authDomain: "review-my-project-282af.firebaseapp.com",
+      databaseURL: "https://review-my-project-282af-default-rtdb.firebaseio.com",
+      projectId: "review-my-project-282af",
+      storageBucket: "review-my-project-282af.appspot.com",
+      messagingSenderId: "1090972319214",
+      appId: "1:1090972319214:web:08592cdeda3db7f5cae2ff"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 
   <!-- STYLESHEET -->
   <!-- FONTS -->
@@ -207,7 +219,7 @@
           </ul>
         </nav>
         <div class="sh-header__search">
-          <form>
+          <form action="#">
             <label>
               <input type="search" name="global-search" class="form-control" placeholder="Search Posts, hashtags, categoires">
               <i class="icon-Search"></i>
@@ -467,17 +479,16 @@
             </div>
           </div>
           <div class="sh-add-comment">
-            <form id="commentform">
-              <input type="text" class="form-control ttg-border-none" placeholder="Enter your name"  id="commentName" />
-              <input type="text" class="form-control ttg-border-none" placeholder="Add a Comment" id="commentDesc" />
-              <br><br>
-            <button type="submit" class="sh-add-comment__btn-save sh-btn-icon"><i class="icon-Submit_Tick"></i></button>
-            </form>
-            
+            <form action="#"><input type="text" class="form-control ttg-border-none" placeholder="Add a Comment" /></form>
+            <div class="sh-add-comment__content">
+              <a href="#" class="sh-add-comment__btn-addimg sh-btn-icon"><i class="icon-Add_Image"></i></a>
+              <span>Remember Community Guidelines</span>
+              <a href="#" class="sh-add-comment__btn-save sh-btn-icon"><span>180</span><i class="icon-Submit_Tick"></i></a>
+            </div>
           </div>
           <div class="sh-comments">
             <div class="sh-comments__head">
-              <div class="sh-comments__title"></div>
+              <div class="sh-comments__title">214 Comments</div>
               <div class="sh-comments__options">
                 <span>Sort by:</span>
                 <a href="#" class="sh-comments__btn-image sh-btn-icon"><i class="icon-Image"></i></a>
@@ -489,13 +500,138 @@
             <!--comment-->
             <div class="sh-comments__section">
               <a href="#" class="sh-comments__avatar sh-avatar"><img src="images/avatars/avatar-02.png" alt=""></a>
-              <div id="sh-comments__content">
-                
-                
+              <div class="sh-comments__content">
+                <a href="#" class="sh-comments__name">DSVUI . </a>
+                <span class="sh-comments__passed">12 hours ago</span>
+                <p>Scratch off globe, for when you want to wipe out any country that displeases you but lack the weaponry to do so.</p>
+                <div class="sh-comments__info">
+                  <a href="#" class="sh-comments__btn-upvote sh-btn-icon"><i class="icon-Upvote"></i><span>901</span></a>
+                  <a href="#" class="sh-comments__btn-down sh-btn-icon"><i class="icon-Downvote"></i><span>36</span></a>
+                </div>
               </div>
             </div>
             <!--comment-->
-          
+            <div class="sh-comments__section">
+              <a href="#" class="sh-comments__avatar sh-avatar"><img src="images/avatars/avatar-18.png" alt=""></a>
+              <div class="sh-comments__content">
+                <a href="#" class="sh-comments__name">turBo . </a>
+                <span class="sh-comments__passed">3 hours ago</span>
+                <a href="#" class="sh-comments__btn-reply sh-btn-icon"><i class="icon-Reply"></i></a>
+                <p>I only came here for the cat hoodie image, why did you include the extraneous images and text</p>
+                <div class="sh-comments__info">
+                  <a href="#" class="sh-comments__btn-upvote sh-btn-icon"><i class="icon-Upvote"></i><span>901</span></a>
+                  <a href="#" class="sh-comments__btn-down sh-btn-icon"><i class="icon-Downvote"></i><span>36</span></a>
+                  <a href="#" class="sh-comments__btn-flag sh-btn-icon"><i class="icon-Flag"></i></a>
+                </div>
+                <!--comment-->
+                <div class="sh-comments__section">
+                  <a href="#" class="sh-comments__avatar sh-avatar"><img src="images/avatars/avatar-19.png" alt=""></a>
+                  <div class="sh-comments__content">
+                    <a href="#" class="sh-comments__name">Gamine . </a>
+                    <span class="sh-comments__passed">1 hour ago</span>
+                    <p>We share everything you need to consider before installing that plugin..</p>
+                    <a href="#"><img src="images/comments-cat.jpg" alt=""></a>
+                    <div class="sh-comments__info">
+                      <a href="#" class="sh-comments__btn-upvote sh-btn-icon"><i class="icon-Upvote"></i><span>901</span></a>
+                      <a href="#" class="sh-comments__btn-down sh-btn-icon"><i class="icon-Downvote"></i><span>36</span></a>
+                    </div>
+                  </div>
+                </div>
+                <!--comment-->
+                <div class="sh-comments__section">
+                  <a href="#" class="sh-comments__avatar sh-avatar"><img src="images/avatars/avatar-10.png" alt=""></a>
+                  <div class="sh-comments__content">
+                    <a href="#" class="sh-comments__name">TonusBoneys . </a>
+                    <span class="sh-comments__passed">39 mins ago</span>
+                    <p>That cat is not ok with any of his life choices right now.</p>
+                    <div class="sh-comments__info">
+                      <a href="#" class="sh-comments__btn-upvote sh-btn-icon"><i class="icon-Upvote"></i><span>256</span></a>
+                      <a href="#" class="sh-comments__btn-down sh-btn-icon"><i class="icon-Downvote"></i><span>12</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--comment-->
+            <div class="sh-comments__section">
+              <a href="#" class="sh-comments__avatar sh-avatar"><img src="images/avatars/avatar-14.png" alt=""></a>
+              <div class="sh-comments__content">
+                <a href="#" class="sh-comments__name">SpanishINQ . </a>
+                <span class="sh-comments__passed">2 hours ago</span>
+                <p>Do not cook on the colorful fire!!! It is copper and will kill you if you use for cooking!!!</p>
+                <div class="sh-comments__info">
+                  <a href="#" class="sh-comments__btn-upvote sh-btn-icon"><i class="icon-Upvote"></i><span>543</span></a>
+                  <a href="#" class="sh-comments__btn-down sh-btn-icon"><i class="icon-Downvote"></i><span>21</span></a>
+                </div>
+              </div>
+            </div>
+            <!--comment-->
+            <div class="sh-comments__section">
+              <a href="#" class="sh-comments__avatar sh-avatar"><img src="images/avatars/avatar-07.png" alt=""></a>
+              <div class="sh-comments__content">
+                <a href="#" class="sh-comments__name">veentahe . </a>
+                <span class="sh-comments__passed">1 hours ago</span>
+                <p>I don't believe your lies. I know you just don't want me to have rainbow s'mores</p>
+                <div class="sh-comments__info">
+                  <a href="#" class="sh-comments__btn-upvote sh-btn-icon"><i class="icon-Upvote"></i><span>512</span></a>
+                  <a href="#" class="sh-comments__btn-down sh-btn-icon"><i class="icon-Downvote"></i><span>27</span></a>
+                </div>
+              </div>
+            </div>
+            <!--comment-->
+            <div class="sh-comments__section">
+              <a href="#" class="sh-comments__avatar sh-avatar"><img src="images/avatars/avatar-04.png" alt=""></a>
+              <div class="sh-comments__content">
+                <a href="#" class="sh-comments__name">Aliencow</a>
+                <span class="sh-comments__passed">20 mins ago</span>
+                <p>I wonder how many coats get ruined by the ninja star coat hanger things.</p>
+                <div class="sh-comments__info">
+                  <a href="#" class="sh-comments__btn-upvote sh-btn-icon"><i class="icon-Upvote"></i><span>489</span></a>
+                  <a href="#" class="sh-comments__btn-down sh-btn-icon"><i class="icon-Downvote"></i><span>23</span></a>
+                </div>
+              </div>
+            </div>
+            <!--comment-->
+            <div class="sh-comments__section">
+              <a href="#" class="sh-comments__avatar sh-avatar"><img src="images/avatars/avatar-08.png" alt=""></a>
+              <div class="sh-comments__content">
+                <a href="#" class="sh-comments__name">BlackSwan . </a>
+                <span class="sh-comments__passed">13 hours ago</span>
+                <p>As a Bolivian, the fact that the scratch-off globe traveler has been there makes me very happy.</p>
+                <div class="sh-comments__info">
+                  <a href="#" class="sh-comments__btn-upvote sh-btn-icon"><i class="icon-Upvote"></i><span>423</span></a>
+                  <a href="#" class="sh-comments__btn-down sh-btn-icon"><i class="icon-Downvote"></i><span>9</span></a>
+                </div>
+              </div>
+            </div>
+            <!--comment-->
+            <div class="sh-comments__section">
+              <a href="#" class="sh-comments__avatar sh-avatar"><img src="images/avatars/avatar-06.png" alt=""></a>
+              <div class="sh-comments__content">
+                <a href="#" class="sh-comments__name">bigdart37 . </a>
+                <span class="sh-comments__passed">1 day ago</span>
+                <p>Who the hell prefers the brownie edges. I'll eat em, but I'd prefer the middle.</p>
+                <div class="sh-comments__info">
+                  <a href="#" class="sh-comments__btn-upvote sh-btn-icon"><i class="icon-Upvote"></i><span>319</span></a>
+                  <a href="#" class="sh-comments__btn-down sh-btn-icon"><i class="icon-Downvote"></i><span>27</span></a>
+                </div>
+              </div>
+            </div>
+            <!--comment-->
+            <div class="sh-comments__section">
+              <a href="#" class="sh-comments__avatar sh-avatar"><img src="images/avatars/avatar-09.png" alt=""></a>
+              <div class="sh-comments__content">
+                <a href="#" class="sh-comments__name">proDude . </a>
+                <span class="sh-comments__passed">6 hours ago</span>
+                <p>Nobody's going to talk about that Rorschach mask!? How cool is that mask?</p>
+                <div class="sh-comments__info">
+                  <a href="#" class="sh-comments__btn-upvote sh-btn-icon"><i class="icon-Upvote"></i><span>302</span></a>
+                  <a href="#" class="sh-comments__btn-down sh-btn-icon"><i class="icon-Downvote"></i><span>21</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="col-lg-4">
           <aside class="sh-aside">
             <!--section-->
@@ -695,73 +831,6 @@
       </div>
     </div>
   </footer>
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-  apiKey: "AIzaSyBup04JFBdGgyNQlxIP7H92qZ7KvGdqPvk",
-  authDomain: "review-my-project-282af.firebaseapp.com",
-  databaseURL: "https://review-my-project-282af-default-rtdb.firebaseio.com",
-  projectId: "review-my-project-282af",
-  storageBucket: "review-my-project-282af.appspot.com",
-  messagingSenderId: "1090972319214",
-  appId: "1:1090972319214:web:08592cdeda3db7f5cae2ff"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-    var CommentRef = firebase.database().ref('CommentRef');
-    document.getElementById('commentform').addEventListener('submit',submitComment);
-    function submitComment(e)
-    {
-      e.preventDefault();
-      let name = document.getElementById('commentName').value;
-      let comment = document.getElementById('commentDesc').value;
-      console.log(name,comment);
-      saveComment(name,comment);
-      console.log('Comment add');
-    }
-    function saveComment(name,comment)
-    {
-      let newCommentRef = CommentRef.push();
-      newCommentRef.set({
-        name:name,
-        comment:comment
-      });
-    }
-    var stdno = 0;
-function additems(name,comment)
-{
-  var tl = document.getElementById('sh-comments__content');
-  
-  var Name = document.createElement('h3');
-  var Commentdescription = document.createElement('p');
-  var breaks = document.createElement('br');
-
-  Name.innerHTML = name;
-  Name.className='sh-comments__name'
-  Commentdescription.innerHTML=comment;
-  tl.appendChild(Name);
-  tl.appendChild(Commentdescription);
-  tl.appendChild(breaks);
-  tl.appendChild(breaks);
-  
-}
-    function getData()
-{
-  firebase.database().ref('CommentRef').once('value',function(snapshot)
-  {
-      snapshot.forEach(
-          function(childsnapshot)
-          {
-              let name = childsnapshot.val().name;
-              let commentDesc = childsnapshot.val().comment;
-              
-              additems(name,commentDesc);
-          }
-      )
-  })
-}
-    window.onload = getData();
-  </script>
 </body>
 
 </html>
